@@ -1,0 +1,1 @@
+console.log(lpTag.events.hasFired('*'))
