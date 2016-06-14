@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>LiveEngage Codepackage - @@KLANT@@ [LP-@@]</title>
+  <link rel="icon" 
+    type="image/x-icon" 
+    href="//www.brightone.nl/wp-content/themes/admium/images/favicon/favicon.ico">
+  <style>
+    /* Navigation style */
+    nav li {
+      display: inline-block;
+      color: white;
+      background: black;
+      font-weight: bold;
+      text-align: center;
+      padding: 2px;
+      width: 200px;
+    }
+    nav li > a {
+      color: white;
+    }
+
+  </style>
+
+
+<!-- LiveEngage: The following file MUST be included on ALL webpages -->
+  <script type="text/javascript" src="le_mtagconfig.js"></script>
+
+<!-- LiveEngage: The following file SHOULD be included on ALL webpages -->
+  <script type="text/javascript" src="le_custom.js"></script>
+
+<!-- LiveEngage: send information at pageload -->
+  <script type="text/javascript">
+    lpTag.section = [  //SET A LIST OF YOUR SITE SECTIONS
+      "codepackage",  //CAN BE A SECTION OR A SUB-SECTION
+      "advanced options"
+    ];
+    lpTag.sdes.push({
+      "type": "lead",  //MANDATORY
+      "lead": {
+        "topic": "customer is interested in Engagement Attributes"  //TOPIC OR NAME OF A SUBMITTED LEAD
+      }
+    });
+  </script>
+
+
+</head>
+
+<body>
+<nav>
+  <ul>
+    <li><a href='./LiveEngage.html'>Basic implementation</a></li>
+    <li><a href='./LE-attributes.html'>Engagement Attributes</a></li>
+    <li><a href='./LE-CustomEngagements.html'>Custom Engagements</a></li>
+    <li><a href='./LE-SPA.html'>Single Page Application</a></li>
+    <li><a href='./LE-CoBrowse.html'>CoBrowse</a></li>
+    <!-- Use the following LI-elements to reference client specific code
+    <li>***</li>
+    <li><a href='#'>Basic implementation</a></li>
+    -->
+  </ul>
+</nav>
+
+<!-- Visualize what is happening -->
+<pre id='pre_showEngagementAttribute' style='float:right; top: 10px; right: 10px; display:none'>The following info can be send to LiveEngage:
+  <div style='border: 3px solid red; width: 500px; min-height: 250px;'><code id='code_showEngagementAttribute'></code></div>
+  <button id='btn_sendEngagementAttribute' disabled onClick='sendEngagementAttribute(_examplehighlight)'>send Engagement Attribute</button>
+</pre>
+
+  
+<h1>LiveEngage - Engagement Attributes</h1>
+
+  <p id='paragraph0'>
+    This page shows all available engagement attributes (EA). An engagement attribute can be send on:
+    <ul>
+      <li>pageload - for more info see the <code>&lt;HEAD&gt;</code>-element in source </li>
+      <li>visitor action</li>
+    </ul>
+    Click on the available attributes in the list below, to see an example code to send the information to LiveEngage. Click the button to send the info to the configured account. Log in to the LiveEngage Agent Workspace to see the result.
+  </p>
+
+  <p id='paragraph1'>
+    <h2>eCommerce info</h2>
+    eCommerce information. These attributes allow you to track the commerce interests and activity of your visitors.
+    <ul>
+      <li><a href='#' onClick='showEngagementAttribute("cart");return false;'>Cart update</a> - Use the Cart Update attributes to get the status of the visitors shopping cart - the products within the cart, and its total monetary value.
+      <li><a href='#' onClick='showEngagementAttribute("purchase");return false;'>Transaction</a> - Transaction, purchase/deposit details, including the products themselves and their details.
+      <li><a href='#' onClick='showEngagementAttribute("prodView");return false;'>Viewed product</a> - Use product viewed attributes to know more about which product categories interest your visitors.
+    </ul>
+
+    <h2>Visitor info</h2>
+    Retrieve specific details about your website visitors, for example: the channel they arrive from and the affiliate they are associated with.
+    <ul>
+      <li><a href='#' onClick='showEngagementAttribute("ctmrinfo");return false;'>Customer info</a> - Allows you to collect data about your registered visitors: the customer type, e.g. VIP or Platinum, and their life-cycle status, e.g. upgraded account or inactive.
+      <li><a href='#' onClick='showEngagementAttribute("mrktInfo");return false;'>Marketing source</a> - Get more details about the source of your visitors, the campaign that drove them to your website, and the affiliate they are associated with.
+      <li><a href='#' onClick='showEngagementAttribute("personal");return false;'>Personal info</a> - Allows you to collect personal information about visitors. You can pass login information from cookies or from questions you ask them in your forms.
+    </ul>
+
+    <h2>Visitor Journey</h2>
+    Collect details about key actions that visitors take along their journey, and customize their experience accordingly. This includes the leads they generated, errors they experience, and more.
+    <ul>
+      <li><a href='#' onClick='showEngagementAttribute("lead");return false;'>Lead</a> - Tracking lead information will help you understand what your visitors are interested in and where they are in your funnel. Tracking the value of the lead will appear in your revenue reports, in order for you to measure the monetary value of your campaigns.
+      <li><a href='#' onClick='showEngagementAttribute("service");return false;'>Service activity</a> - Measuring service activities and success can be achieved by using this Engagement attribute. The data about ordering a checkbook, or software usage can be collected using the topic and status properties.
+      <li><a href='#' onClick='showEngagementAttribute("error");return false;'>Visitor error</a> - Getting the information about errors that visitors experience when they browse the site and fill out forms.
+    </ul>
+
+    <h2>Section</h2>
+    Section is a special attribute. It's code is different from the other attributes. And can only be send on (/before) pageload.
+    <ul>
+      <li><a href='#' onClick='showEngagementAttribute("section");return false;'>Section</a> - Section Engagement Attributes allow you to describe specific webpages by embedding code on your webpage. Use sections to determine the appropriate Location for engaging with visitors, or to display where those visitors are browsing.</li>
+    </ul>
+
+  </p>
+
+  <script type="text/javascript">
+    var showEngagementAttribute = function (eatype){
+      _examplehighlight = '';
+      document.getElementById('pre_showEngagementAttribute').style.display='block';
+      if(eatype === 'section') {
+        document.getElementById('code_showEngagementAttribute').innerText= 'lpTag.section = [  //SET A LIST OF YOUR SITE SECTIONS\n'+
+        '  "electronics",  //CAN BE A SECTION OR A SUB-SECTION\n'+
+        '  "user agreement faqs"\n'+
+        '];';
+        document.getElementById('btn_sendEngagementAttribute').disabled=true;
+      } else {
+        for(var ea in _example){
+          if(_example[ea].type === eatype) {
+            _examplehighlight = _example[ea];
+            document.getElementById('code_showEngagementAttribute').innerText=
+            'lpTag.sdes = lpTag.sdes || [];\n' +
+            'lpTag.sdes.push(\n'+
+            JSON.stringify(_examplehighlight, null, 2)+
+            '\n)';
+            document.getElementById('btn_sendEngagementAttribute').disabled=false;
+          break;
+          } else {
+            document.getElementById('code_showEngagementAttribute').innerText='';
+            document.getElementById('btn_sendEngagementAttribute').disabled=true;
+          }
+        }
+      }
+    };
+    var sendEngagementAttribute = function (ea){
+      window.lpTag = window.lpTag || {};
+      lpTag.sdes = lpTag.sdes || [];
+      lpTag.sdes.push(ea);
+      document.getElementById('btn_sendEngagementAttribute').disabled=true;
+    };
+  </script>
+  <script type="text/javascript" src="le_attributes.js"></script>
+
+</body>
+</html>

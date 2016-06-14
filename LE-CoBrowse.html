@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>LiveEngage Codepackage - @@KLANT@@ [LP-@@]</title>
+  <link rel="icon" 
+    type="image/x-icon" 
+    href="//www.brightone.nl/wp-content/themes/admium/images/favicon/favicon.ico">
+  <style>
+    /* Navigation style */
+    nav li {
+      display: inline-block;
+      color: white;
+      background: black;
+      font-weight: bold;
+      text-align: center;
+      padding: 2px;
+      width: 200px;
+    }
+    nav li > a {
+      color: white;
+    }
+
+  </style>
+
+
+<!-- LiveEngage: The following file MUST be included on ALL webpages -->
+  <script type="text/javascript" src="le_mtagconfig.js"></script>
+
+
+</head>
+
+<body>
+<nav>
+  <ul>
+    <li><a href='./LiveEngage.html'>Basic implementation</a></li>
+    <li><a href='./LE-attributes.html'>Engagement Attributes</a></li>
+    <li><a href='./LE-CustomEngagements.html'>Custom Engagements</a></li>
+    <li><a href='./LE-SPA.html'>Single Page Application</a></li>
+    <li><a href='./LE-CoBrowse.html'>CoBrowse</a></li>
+    <!-- Use the following LI-elements to reference client specific code
+    <li>***</li>
+    <li><a href='#'>Basic implementation</a></li>
+    -->
+  </ul>
+</nav>
+
+<h1>LiveEngage - CoBrowse and protected fields</h1>
+
+  <p id='paragraph0'>
+    This page shows how to protect form fields and/or buttons in a CoBrowse session from being manipulated by the agent to comply with regulations.<br>
+    The protection only applies to form elements. To protect an element, add <code>data-protected='true'</code> as an element attribute.<br>
+    An alternative is to provide a list of classes and/or ID's, which can be added to the back-end to identify protected elements. 
+  </p>
+
+  <p id='paragraph1'>
+    <style>
+      label { display: inline-block; width: 120px; }
+    </style>
+    <b>Customer Data:</b> (<i><span style='color:red'>*</span> = protected field</i>)<br>
+    <form style='margin-left: 80px'>
+      <label>Last visit date<span style='color:red'>*</span></label>: <span data-protected='true' title='Protection only works on form elements'>yesterday</span><br>
+      <label>First name</label>:                                      <input name='fname' type='text' value='John'><br>
+      <label>Last name</label>:                                       <input name='lname' type='text' value='Doe'><br>
+      <label>IBAN<span style='color:red'>*</span></label>:            <input name='IBAN'  type='text' value='NL13TEST0123456789' data-protected='true'><br>
+      <input type='submit' data-protected='true'>
+    </form>
+  </p>
+
+</body>
+</html>

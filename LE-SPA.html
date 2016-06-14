@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <title>LiveEngage Codepackage - @@KLANT@@ [LP-@@]</title>
+  <link rel="icon" 
+    type="image/x-icon" 
+    href="//www.brightone.nl/wp-content/themes/admium/images/favicon/favicon.ico">
+  <style>
+    #paragraph1, #paragraph2, #paragraph3 {
+      display: none;
+    }
+
+    /* Navigation style */
+    nav li {
+      display: inline-block;
+      color: white;
+      background: black;
+      font-weight: bold;
+      text-align: center;
+      padding: 2px;
+      width: 200px;
+    }
+    nav li > a {
+      color: white;
+    }
+
+  </style>
+
+  
+<!-- LiveEngage: The following file MUST be included on ALL webpages -->
+  <script type="text/javascript" src="le_mtagconfig.js"></script>
+
+<!-- LiveEngage: The following file SHOULD be included on ALL webpages -->
+  <script type="text/javascript" src="le_custom.js"></script>
+
+<!-- LiveEngage: send information at pageload -->
+  <script type="text/javascript">
+    lpTag.section = [  //SET A LIST OF YOUR SITE SECTIONS
+      "codepackage",  //CAN BE A SECTION OR A SUB-SECTION
+      "single page application"
+    ];
+  </script>
+
+</head>
+
+<body>
+<nav>
+  <ul>
+    <li><a href='./LiveEngage.html'>Basic implementation</a></li>
+    <li><a href='./LE-attributes.html'>Engagement Attributes</a></li>
+    <li><a href='./LE-CustomEngagements.html'>Custom Engagements</a></li>
+    <li><a href='./LE-SPA.html'>Single Page Application</a></li>
+    <li><a href='./LE-CoBrowse.html'>CoBrowse</a></li>
+    <!-- Use the following LI-elements to reference client specific code
+    <li>***</li>
+    <li><a href='#'>Basic implementation</a></li>
+    -->
+  </ul>
+</nav>
+
+<h1>LiveEngage - Single Page Application</h1>
+
+  <p id='paragraph0'>
+    This page is an example for usage on Single Page Applications. The actual function, responsible for sending the info, is <code>lpTag.newPage(URL, { section: [], sdes: [] );</code>.<br>
+    To create it in a visual context, three content blocks were created to track visitor navigation.<br>
+	<mark>There is a wrapper-function inside <code>le_custom.js</code> to provide syntax checking.</mark>
+	<ul>
+	  <li><a href='#' onClick="toggleContent(1); lpTag.newPage(document.location.href+'/content1', { section: ['content1'], sdes: [] }); return false;">Content 1</a></li>
+	  <li><a href='#' onClick="toggleContent(2); lpTag.newPage(document.location.href+'/content2', { section: ['content2'], sdes: [] }); return false;">Content 2</a></li>
+	  <li><a href='#' onClick="toggleContent(3); lpTag.newPage(document.location.href+'/content3', { section: ['content3'], sdes: [] }); return false;">Content 3</a></li>
+	</ul>
+  </p>
+  
+  <div id='paragraph1'>
+    <h2>Content 1</h2>
+	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a sagittis nunc, in mollis erat. Etiam sed neque eleifend, congue mi non, cursus enim. Vivamus viverra ullamcorper ex. Cras nec porttitor neque. Cras a finibus lorem. Morbi felis mi, egestas eget sem vitae, ultricies placerat ante. Donec a dictum odio. Nunc quis ipsum justo. Nulla sagittis lorem urna, quis elementum tortor faucibus ac. Integer egestas, massa sit amet cursus lobortis, tortor nibh posuere tortor, et laoreet libero urna ac odio. Nunc ut tincidunt nulla. Cras facilisis lectus lacus, non dignissim dui tempus eu. Pellentesque a leo et elit ullamcorper congue fringilla id enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec et facilisis ipsum.
+  </div>
+
+  <div id='paragraph2'>
+    <h2>Content 2</h2>
+    Etiam euismod ac orci at sagittis. Vivamus sagittis enim id pellentesque mollis. Quisque vulputate arcu odio, id gravida velit congue ac. In varius elementum orci egestas dapibus. Maecenas tincidunt posuere leo, quis sodales tortor iaculis sit amet. Maecenas ac tempor tortor. Suspendisse potenti. Nam vel ultrices sapien. Phasellus molestie aliquet arcu nec fringilla. Duis vehicula, ipsum et maximus mattis, lacus velit molestie ipsum, in efficitur metus tellus in metus.
+  </div>
+
+  <div id='paragraph3'>
+    <h2>Content 3</h2>
+    Sed enim risus, accumsan eleifend sapien et, malesuada pellentesque diam. In quis felis sapien. Phasellus et elit non enim maximus porta. In porttitor odio sed leo ultricies, eu semper nulla accumsan. Pellentesque laoreet tortor vel nisi facilisis, nec dapibus lacus convallis. Sed vitae tortor mi. Proin tempus finibus tellus vitae interdum. Quisque aliquet diam erat. Aenean sit amet auctor felis. Mauris feugiat mauris ac sapien fringilla, egestas vestibulum arcu porta. Donec finibus est non tellus maximus, quis ultricies ipsum congue. Nulla a cursus ex.
+  </div>
+
+  <script type="text/javascript">
+    var toggleContent = function(id){
+	  document.getElementById('paragraph1').style.display = (id == 1) ? 'inherit' : 'none';
+	  document.getElementById('paragraph2').style.display = (id == 2) ? 'inherit' : 'none';
+	  document.getElementById('paragraph3').style.display = (id == 3) ? 'inherit' : 'none';
+	}
+  </script>
+
+</body>
+</html>
