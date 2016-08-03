@@ -1,7 +1,5 @@
-console.log('Events system');
-
 // example function 
-// lpTag.events.bind(appName, eventName, function);
+lpTag.events.bind(appName, eventName, function);
 
 // function to read cookie
 function LPreadCookie(name) {
