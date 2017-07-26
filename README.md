@@ -9,7 +9,7 @@ It includes the following basic information:
 * LE CoBrowse
 
 # HOW-TO
-To get started with this information grab the following LiveEngage Tag from your account and replace it in the **__le_mtagconfig.js__**.
+To get started with this information grab the LiveEngage Tag from your account and replace it in the **__le_mtagconfig.js__**.
 In a basic LiveEngage account there should be sticky button available this can be used to start your first chat and see what the Attributes, SPA and CoBrowse does.
 
 # LE Attributes
