@@ -1,6 +1,6 @@
 # LP-LE
 
-This is a standard code package that can be used to do a implementation of [LiveEngage](https://liveengage.liveperson.com/) on your website.
+This is a standard code package that can be used to do an implementation of [LiveEngage](https://liveengage.liveperson.net/) on your website.
 
 It includes the following basic information:
 
@@ -13,7 +13,7 @@ To get started with this information grab the following LiveEngage Tag from your
 In a basic LiveEngage account there should be sticky button available this can be used to start your first chat and see what the Attributes, SPA and CoBrowse does.
 
 # LE Attributes
-**LE Attributes** Are used to sent information about the customer to the platform and can be used to track for example transactions and to support the chat agent.
+**LE Attributes** are used to sent information about the customer to the platform and can be used to track for example transactions and to support the chat agent.
 
 # LE SPA
 **LE SPA** is used to support Single-page Applications which can update and change the page layout, to for example remove or add a chat button.
